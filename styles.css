@@ -56,6 +56,9 @@ body {
     border-radius: 10px;
     width: 48%;
 }
+.encryption-section option, .decryption-section option{
+    color: black;
+}
 
 textarea, input, select {
     width: 90%;
