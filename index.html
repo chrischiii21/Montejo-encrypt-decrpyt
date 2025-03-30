@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption & Decryption</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="nav">
+        <button onclick="showSection('encryption')">Encryption & Decryption</button>
+        <button onclick="showSection('videos')">Videos</button>
+        <button onclick="showSection('discussion')">Discussion Board</button>
+    </div>
+
+    <div id="encryption" class="container active">
+        <h2>Encryption & Decryption</h2>
+        <div class="encryption-decryption-container">
+            <div class="encryption-section">
+                <h3>Encryption</h3>
+                <label for="encrypt-message">Enter a message:</label><br>
+                <textarea id="encrypt-message"></textarea><br>
+                <label>Key Option:</label>
+                <select id="encrypt-key-option" onchange="toggleKeyField('encrypt')">
+                    <option value="custom">Custom Key</option>
+                    <option value="auto">Automatic Key</option>
+                </select><br>
+                <input type="number" id="encrypt-key" min="1" max="25" class="key-field"><br>
+                <button onclick="encrypt()">Encrypt</button>
+                <h3>Output:</h3>
+                <p id="encrypt-output"></p>
+            </div>
+            <div class="decryption-section">
+                <h3>Decryption</h3>
+                <label for="decrypt-message">Enter a message:</label><br>
+                <textarea id="decrypt-message"></textarea><br>
+                <label>Key Option:</label>
+                <select id="decrypt-key-option" onchange="toggleKeyField('decrypt')">
+                    <option value="custom">Custom Key</option>
+                    <option value="auto">Automatic Key</option>
+                </select><br>
+                <input type="number" id="decrypt-key" min="1" max="25" class="key-field"><br>
+                <button onclick="decrypt()">Decrypt</button>
+                <h3>Output:</h3>
+                <p id="decrypt-output"></p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="videos" class="container">
+        <h3>Videos</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/TImdsUglGv4" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/9chKCUQ8_VQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+    <div id="discussion" class="container">
+        <h3>Discussion Board</h3>
+        
+        <div class="discussion-container">
+            <h4>Why is encryption important?</h4>
+            <p>Encryption helps protect sensitive data from unauthorized access. It ensures privacy, secures financial transactions, and is essential in cybersecurity.</p>
+        </div>
+        
+        <div class="discussion-container">
+            <h4>Can encryption be misused?</h4>
+            <p>Yes, encryption can be misused. For example, criminals use encrypted messaging apps to avoid law enforcement detection, and ransomware attackers encrypt victims' files to demand ransom.</p>
+        </div>
+        
+        <div class="discussion-container">
+            <h4>Real-life ethical concerns about encryption:</h4>
+            <ul>
+                <li><strong>Government Surveillance vs. Privacy:</strong> Governments argue that encryption hinders law enforcement in investigating crimes, while privacy advocates insist on strong encryption for protecting personal data (Source: Electronic Frontier Foundation).</li>
+                <li><strong>Dark Web & Cybercrime:</strong> Criminal organizations use encryption to hide illegal activities, making it difficult for authorities to track them (Source: Europol Reports).</li>
+                <li><strong>Corporate Responsibility:</strong> Tech companies face ethical dilemmas about providing encryption backdoors to governments while maintaining user trust (Source: The Guardian, Apple vs. FBI case).</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
