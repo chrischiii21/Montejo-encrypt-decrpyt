@@ -66,6 +66,7 @@ textarea, input, select {
     background: rgba(255, 255, 255, 0.2);
     color: white;
     font-size: 16px;
+    resize: none;
 }
 
 button {
@@ -81,17 +82,170 @@ button {
 button:hover {
     background: #ff5722;
 }
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+.video-container h3 {
+    font-size: 18px;
+    color: #ff9800;
+    margin-bottom: 10px;
+}
+
+.video-container iframe, 
+.video-container video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Keeps correct proportions */
+    display: block;
+    border-radius: 10px; /* Optional: Rounds corners for better UI */
+}
+
+/* Article Styling (Discussion Board) */
+article {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+/* Heading Styles */
+article h2{
+    color: #ff9800;
+    border-left: 5px solid #ff9800;
+    padding-left: 10px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* Paragraphs: Adjusted Width for Better Readability */
+article h3{
+    text-align: left;
+}
+article p {
+    font-size: 16px;
+    color: #ddd;
+    line-height: 1.6;
+    text-align: justify;
+    max-width: 750px; /* Prevents excess space */
+    margin: 10px auto; /* Centers within the article */
+}
+
+/* Discussion Topics */
+.discussion-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+    max-width: 750px;
+}
+
+.discussion-container h3 {
+    font-size: 18px;
+    color: #ff9800;
+    margin-bottom: 10px;
+}
+
+.discussion-container img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* References Section */
+.references {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 15px;
+    text-align: left;
+    max-width: 100%;
+}
+.references ol {
+    /* padding-left: 20px; Adds indentation for readability */
+    text-align: left;
+}
+.references a {
+    word-break: break-all; /* Breaks long URLs properly */
+}
+
+
+.references h2 {
+    color: #ff9800;
+}
+
+/* .references ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+
+} */
+
+.references li {
+    margin-bottom: 10px;
+}
+
+/* .references a {
+    text-decoration: none;
+    color: #ffcc00;
+    font-weight: bold;
+} */
+
+.references a:hover {
+    text-decoration: underline;
+}
 
 @media (max-width: 768px) {
     .encryption-decryption-container {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        padding: 10px;
     }
 
-    .encryption-section, .decryption-section {
+    .encryption-section, 
+    .decryption-section {
         width: 100%;
+        padding: 10px;
     }
 
-    textarea, input, select {
+    textarea, 
+    input, 
+    select {
         width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+    .video-container, .references {
+        padding: 10px;
+        max-width: 100%;
+    }
+    
+    .references ul {
+        padding-left: 15px; 
+    }
+
+    .discussion-container img {
+        max-height: 200px; /* Reduces image size for better mobile fit */
     }
 }
+
+

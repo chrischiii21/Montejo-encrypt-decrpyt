@@ -5,151 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encryption & Decryption</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="nav">
+    <nav class="nav">
         <button onclick="showSection('encryption')">Encryption & Decryption</button>
         <button onclick="showSection('videos')">Videos</button>
         <button onclick="showSection('discussion')">Discussion Board</button>
-    </div>
+    </nav>
 
-    <div id="encryption" class="container active">
-        <h2>Encryption & Decryption</h2>
+    <section id="encryption" class="container active">
+        <h1>ENCRYPTION & DECRYPTION</h1>
         <div class="encryption-decryption-container">
             <div class="encryption-section">
                 <h3>Encryption</h3>
-                <label for="encrypt-message">Enter a message:</label><br>
-                <textarea id="encrypt-message"></textarea><br>
+                <label for="encrypt-message">Enter a message:</label>
+                <textarea id="encrypt-message"></textarea>
                 <label>Key Option:</label>
                 <select id="encrypt-key-option" onchange="toggleKeyField('encrypt')">
                     <option value="custom">Custom Key</option>
                     <option value="auto">Automatic Key</option>
-                </select><br>
-                <input type="number" id="encrypt-key" min="1" max="25" class="key-field"><br>
+                </select>
+                <input type="number" id="encrypt-key" min="1" max="25" class="key-field">
                 <button onclick="encrypt()">Encrypt</button>
                 <h3>Output:</h3>
                 <p id="encrypt-output"></p>
             </div>
             <div class="decryption-section">
                 <h3>Decryption</h3>
-                <label for="decrypt-message">Enter a message:</label><br>
-                <textarea id="decrypt-message"></textarea><br>
+                <label for="decrypt-message">Enter a message:</label>
+                <textarea id="decrypt-message"></textarea>
                 <label>Key Option:</label>
                 <select id="decrypt-key-option" onchange="toggleKeyField('decrypt')">
                     <option value="custom">Custom Key</option>
                     <option value="auto">Automatic Key</option>
-                </select><br>
-                <input type="number" id="decrypt-key" min="1" max="25" class="key-field"><br>
+                </select>
+                <input type="number" id="decrypt-key" min="1" max="25" class="key-field">
                 <button onclick="decrypt()">Decrypt</button>
                 <h3>Output:</h3>
                 <p id="decrypt-output"></p>
             </div>
         </div>
-    </div>
+    </section>
     
-    <div id="videos" class="container">
-        <h3>Videos</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/TImdsUglGv4" frameborder="0" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/9chKCUQ8_VQ" frameborder="0" allowfullscreen></iframe>
+    <section id="videos" class="container">
+        <h1>VIDEOS</h1>
+        <div class="video-container">
+            <h3>What is Encryption?</h3>
+        <iframe width="560" height="315" src="videos/What is Encryption.mp4" frameborder="0" allowfullscreen></iframe>
+            <p>​This video will provide an overview of encryption, explaining its role in securing data and how it protects information from unauthorized access. The video also highlights the importance of encryption in safeguarding sensitive information against cyber threats.</p>
     </div>
+        <div class="video-container">
+            <h3>How Encryption Works - and How It Can Be Bypassed</h3>
+
+            <iframe width="560" height="315" src="videos/How Encrpytion Works.mp4" frameborder="0" allowfullscreen></iframe>
+            <p>The video will discuss the balance between privacy and national security, particularly focusing on the debate involving tech companies like Apple and government agencies. It explores the mechanisms of encryption and the methods by which it can be circumvented, providing insights into the complexities of data protection and the challenges faced in maintaining both security and privacy. </p>
+        </div>
+
+        <div class="video-container">
+            <h3>What is Decryption | How Decryption works | What are the types of decryption?</h3>
+
+            <iframe width="560" height="315" src="videos/What is Decryption.mp4" frameborder="0" allowfullscreen></iframe>
+            <p>This video explains the process of converting encrypted data back to its original form. It covers how decryption works using cryptographic keys and algorithms to reverse encryption. The video also discusses different types of decryption, including symmetric decryption, which uses the same key for encryption and decryption, and asymmetric decryption, which relies on public and private key pairs. Additionally, it may touch on hashing as a one-way encryption alternative used for data integrity and password storage.</p>
+        </div>
+        
+    </section>
     
-    <div id="discussion" class="container">
-        <!-- <h3>Discussion Board</h3>
-        
-        <div class="discussion-container">
-            <h4>Why is encryption important?</h4>
-            <img src="images/encryption-importance.jpg" alt="Encryption Importance">
-            <p>Encryption helps protect sensitive data from unauthorized access. It ensures privacy, secures financial transactions, and is essential in cybersecurity.</p>
+    <section id="discussion" class="container">
+        <h1>DISCUSSION BOARD</h1>
+        <h2>Encryption and Its Importance</h2>
+
+            <div class="discussion-container">
+            <p>Encryption safeguards information by converting it into an unreadable format, ensuring only authorized access.</p>
         </div>
-        
-        <div class="discussion-container">
-            <h4>Can encryption be misused?</h4>
-            <img src="images/encryption-misuse.jpg" alt="Encryption Misuse">
-            <p>Yes, encryption can be misused. For example, criminals use encrypted messaging apps to avoid law enforcement detection, and ransomware attackers encrypt victims' files to demand ransom.</p>
-        </div>
+        <h2>Value and Usage of Encryption</h2>
 
         <div class="discussion-container">
-            <h4>Privacy vs. Security Debate</h4>
-            <img src="images/privacy-vs-security.jpg" alt="Privacy vs Security">
-            <p>The core ethical dilemma revolves around balancing individual privacy rights with collective security needs. While encryption protects personal freedoms and sensitive data, it can also impede law enforcement agencies from accessing information vital to national security.</p>
-        </div>
 
-        <div class="discussion-container">
-            <h4>Client-Side Scanning</h4>
-            <img src="images/client-side-scanning.jpg" alt="Client Side Scanning">
-            <p>Proposals for client-side scanning aim to detect illegal content on users' devices before encryption. Critics argue that such measures undermine the essence of encryption, potentially leading to widespread surveillance and privacy infringements.</p>
-        </div>
-
-        <div class="discussion-container">
-            <h4>Governmental Overreach</h4>
-            <img src="images/government-overreach.jpg" alt="Government Overreach">
-            <p>Instances where governments mandate access to encrypted data raise concerns about potential overreach and the erosion of civil liberties. Some countries have attempted to weaken encryption for surveillance purposes, sparking opposition from privacy advocates.</p>
-        </div> -->
-
-        <h3>Discussion Board</h3>
-        
-        <div class="container">
-            <h1>Encryption and Its Importance</h1>
-            <p>Encryption is a fundamental technology that safeguards information by converting it into an unreadable format, ensuring that only authorized parties can access the original data. Its significance spans various domains, from personal privacy to national security.</p>
-            
-            <h2>Value and Usage of Encryption</h2>
             <h3>1. Data Protection</h3>
-            <p>Encryption shields sensitive information such as personal identifiers, financial records, and intellectual property from unauthorized access. Even if data is intercepted or stolen, encryption renders it indecipherable without the appropriate decryption key.</p>
-            
+            <p>Encryption shields sensitive data such as personal identifiers and financial records.</p>
             <h3>2. Secure Communications</h3>
-            <p>It ensures the confidentiality of communications over the internet, enabling secure transactions, confidential emails, and safe browsing experiences. This protection fosters trust in digital interactions.</p>
-            
+            <p>Encryption ensures confidentiality in digital interactions, securing transactions and communications.</p>
             <h3>3. Regulatory Compliance</h3>
-            <p>Many industries are mandated to implement encryption to comply with data protection regulations, ensuring that organizations handle sensitive information responsibly and maintain customer trust.</p>
-            
+            <p>Many industries require encryption to comply with data protection regulations.</p>
             <h3>4. Data Integrity</h3>
-            <p>Beyond confidentiality, encryption helps maintain data integrity by preventing unauthorized alterations, ensuring that the information remains accurate and reliable.</p>
-            
-            <h2>Potential Misuse of Encryption</h2>
+            <p>Encryption prevents unauthorized alterations, maintaining data accuracy.</p>
+        </div>  
+        <h2>Potential Misuse of Encryption</h2>
+
+        <div class="discussion-container">
+
             <h3>1. Shielding Criminal Activities</h3>
-            <p>Malicious actors, including terrorists and cybercriminals, may use encryption to conceal illicit communications and operations, complicating law enforcement efforts to monitor and prevent illegal activities.</p>
-            
+            <p>Malicious actors may use encryption to hide illicit activities.</p>
             <h3>2. Obstructing Justice</h3>
-            <p>The use of strong encryption can hinder law enforcement agencies from accessing evidence necessary for investigations, leading to challenges in prosecuting crimes effectively.</p>
-            
-            <h2>Real-Life Ethical Concerns About Encryption</h2>
+            <p>Strong encryption can make law enforcement investigations more difficult.</p>
+        </div>
+            <h2>Ethical Concerns</h2>
+            <div class="discussion-container">
+
             <h3>1. Privacy vs. Security</h3>
-            <p>The core ethical dilemma revolves around balancing individual privacy rights with collective security needs. While encryption protects personal freedoms and sensitive data, it can also impede law enforcement agencies from accessing information vital to national security.</p>
-            
+            <p>Balancing privacy rights with national security needs remains a key challenge.</p>
             <h3>2. Client-Side Scanning</h3>
-            <p>Proposals for client-side scanning aim to detect illegal content on users' devices before encryption. Critics argue that such measures undermine the essence of encryption, potentially leading to widespread surveillance and privacy infringements.</p>
-            
+            <p>Scanning encrypted data before transmission could lead to surveillance issues.</p>
             <h3>3. Governmental Overreach</h3>
-            <p>Instances where governments mandate access to encrypted data raise concerns about potential overreach and the erosion of civil liberties.</p>
-            
+            <p>Mandated access to encrypted data raises concerns about civil liberties.</p>
             <h3>4. Ethical Use in Business</h3>
-            <p>Companies face ethical decisions regarding the implementation of encryption, balancing the protection of customer data with compliance to legal obligations.</p>
-            
-            <h2>Discussion Board</h2>
+            <p>Companies must balance user data protection with legal obligations.</p>
+        </div>
+        
+            <h2>Discussion Topics</h2>
             <div class="discussion-container">
                 <h3>1. Why is encryption important?</h3>
-                <img src="images/encryption-importance.jpg" alt="Encryption Importance">
-                <p>Encryption helps protect sensitive data from unauthorized access.</p>
+                <img src="images/importance-of-encryption.jpg" alt="Encryption Importance">
+                <p>Encryption protects data from unauthorized access.</p>
             </div>
-            
             <div class="discussion-container">
                 <h3>2. Can encryption be misused?</h3>
-                <img src="images/encryption-misuse.jpg" alt="Encryption Misuse">
-                <p>Yes, encryption can be misused, such as by criminals using encrypted messaging apps to evade detection.</p>
-            </div>
-            
+                <img src="images/misused.webp" alt="Encryption Misuse">
+                <p>Encryption can be used by criminals to evade detection.</p>
+            </div>  
             <h2>Conclusion</h2>
-            <p>Encryption remains an indispensable tool in the digital age, offering substantial benefits for data protection and privacy.</p>
-            
+            <div class="discussion-container">
+
+                <p>Encryption is crucial in cybersecurity but requires careful ethical considerations.</p>
+            </div>
             <h2>References</h2>
-            <ul>
-                <li><a href="https://www.titanfile.com/blog/what-is-data-encryption-and-why-is-it-important/">TitanFile: What is data encryption and why is it important?</a></li>
-                <li><a href="https://www.ibm.com/think/topics/encryption">IBM: Encryption and why it matters</a></li>
-                <li><a href="https://www.ft.com/content/186a9bb6-9e62-47ce-b974-ce52a2d73e9f">Financial Times: Encryption and the privacy vs security debate</a></li>
-            </ul>
-        </div>
-    </div>
-    
-    <script src="script.js"></script>
+            <div class="discussion-container">
+
+                <ol>
+                    <li>TitanFile. (n.d.). What is data encryption and why is it important? <i>TitanFile Blog</i>. <a href="https://www.titanfile.com/blog/what-is-data-encryption-and-why-is-it-important/" target="_blank">https://www.titanfile.com/blog/what-is-data-encryption-and-why-is-it-important/</a></li>
+                    <li>IBM. (n.d.). Encryption: What it is and why it matters. <i>IBM Think</i>. <a href="https://www.ibm.com/think/topics/encryption" target="_blank">https://www.ibm.com/think/topics/encryption</a></li>
+                    <li>Financial Times. (2023). Encryption and the privacy vs security debate. <i>Financial Times</i>. <a href="https://www.ft.com/content/186a9bb6-9e62-47ce-b974-ce52a2d73e9f" target="_blank">https://www.ft.com/content/186a9bb6-9e62-47ce-b974-ce52a2d73e9f</a></li>
+                </ol>
+            </div>
+    </section>
 </body>
 </html>
